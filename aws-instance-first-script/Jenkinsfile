@@ -24,7 +24,7 @@ pipeline {
                  script{
                         dir("terraform")
                         {
-                            git "https://github.com/easyawslearn/Terraform-Tutorial.git"
+                            git "https://github.com/cbanerjee/Terraform-Tutorial.git"
                         }
                     }
                 }
@@ -57,7 +57,8 @@ pipeline {
 
         stage('Apply') {
             steps {
-                sh "pwd;cd terraform/aws-instance-first-script ; terraform apply -input=false tfplan"
+               // sh "pwd;cd terraform/aws-instance-first-script ; terraform apply -input=false tfplan"
+                sh "echo 'This is supposedly the apply stage but kept out of the equation to avoid billing'"
             }
         }
     }
